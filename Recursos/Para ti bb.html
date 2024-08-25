@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximun-scale= 1.0, user-scalable=no">
+    <title>Para ti</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Edu+VIC+WA+NT+Beginner&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    
+    <style>
+
+        
+        @media(max-width: 500px){
+
+            body{
+                background-color: #8e9aaf;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                
+            }
+            
+            .principal{
+                width: 365px;
+                height: 750px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+            }
+            
+            
+        
+            .caja{
+                width: 365px;
+                height: 750px;
+                background-color: #cbc0d3;
+                border-radius: 15px;
+                margin: 0 auto;
+                position: relative;
+                display: flex;
+                text-align: center;
+                justify-content: center;
+                align-items: center;
+
+            }
+
+            .texto{
+                font-family: cursive;
+                position: absolute;
+                top: 50px;
+                text-align: center;
+                width: 100%;
+                
+            }
+
+            .frase{
+                font-family: "Indie Flower", cursive;
+                position: absolute;
+                top: 600px;
+                text-align: center;
+                width: 100%;
+
+            }
+
+            .vidrio {
+                height: 400px;
+                width: 300px;
+                background: #aeb5bf;
+                border-radius: 300px 300px 0px 0px;
+            }
+
+            .vidrio:after {
+                content: "";
+                position: absolute;
+                height: 15px;
+                width: 300px;
+                background: #412f26;
+                top: 575px;
+                left: 32.4px;
+            }
+
+            .brillo{
+                width: 15px;
+                height: 150px;
+                background: white;
+                opacity: 0.2;
+                position: absolute;
+                left: 290px;
+                top: 280px;
+                border-radius: 100px;
+                z-index: 10;
+            }
+
+            .brillo:before {
+            content: "";
+            width: 15px;
+            height: 30px;
+            position: absolute;
+            background: white;
+            top: 160px;
+            left: 0px;
+            border-radius: 100px;
+        }
+
+        .petalos>div {
+            position: absolute;
+            background: #d52d58;
+            width: 45px;
+            height: 75px;
+            top: 250px;
+            transition: all 0.5s ease-out;
+        }
+
+        .petalos>div:nth-child(1) {
+            border-radius: 15px;
+            box-shadow: 0px 0px 60px rgba(245, 148, 184, 1);
+            left: 165px;
+            top: 250px;
+            background: #d52d58;
+        }
+
+        .petalos>div:nth-child(2),
+        .petalos>div:nth-child(4),
+        .petalos>div:nth-child(6) {
+            background: #b81b43;
+            left: 145px;
+            border-radius: 0px 60px 0px 40px;
+            transform-origin: bottom right;
+        }
+
+        .petalos>div:nth-child(3),
+        .petalos>div:nth-child(5),
+        .petalos>div:nth-child(7) {
+            background: #b81b43;
+            left: 190px;
+            border-radius: 60px 0px 40px 0px;
+            transform-origin: bottom left;
+        }
+
+        .petalos>div:nth-child(2) {
+            z-index: 5;
+            background: #ab1a3f;
+            top: 258px;
+            height: 70px;
+            box-shadow: 0px 0px 60px rgba(245, 148, 184, .5);
+            animation: bloom2 3s ease-in-out;
+            animation-fill-mode: forwards;
+        }
+
+        .petalos>div:nth-child(4) {
+            z-index: 3;
+            background: #b81b43;
+            top: 250px;
+            height: 70px;
+            box-shadow: 0px 0px 60px rgba(245, 148, 184, .5);
+            animation: bloom4 3s ease-in-out, glowing 2.5s ease-in-out infinite;
+            animation-fill-mode: forwards;
+        }
+
+        .petalos>div:nth-child(5) {
+            z-index: 2;
+            background: #b81b43;
+            top: 250px;
+            height: 70px;
+            box-shadow: 0px 0px 60px rgba(245, 148, 184, .5);
+            animation: bloom5 3s ease-in-out, glowing 2.5s ease-in-out infinite;
+            animation-fill-mode: forwards;
+        }
+
+        .petalos>div:nth-child(6) {
+            z-index: 1;
+            background: #c9204b;
+            top: 250px;
+            height: 75px;
+            box-shadow: 0px 0px 60px rgba(245, 148, 184, .3);
+            animation: bloom6 3s ease-in-out, glowing 2.5s ease-in-out infinite;
+            animation-fill-mode: forwards;
+        }
+
+        .petalos>div:nth-child(7) {
+            z-index: 0;
+            background: #c9204b;
+            top: 250px;
+            height: 75px;
+            box-shadow: 0px 0px 60px rgba(245, 148, 184, .3);
+            animation: bloom7 3s ease-in-out, glowing 2.5s ease-in-out infinite;
+            animation-fill-mode: forwards;
+        }
+
+        .hojas>div:nth-last-child(1) {
+            position: absolute;
+            width: 55px;
+            height: 20px;
+            background: #338f37;
+            top: 310px;
+            left: 162px;
+            border-radius: 100px;
+        }
+
+        .hojas>div:nth-child(1) {
+            position: absolute;
+            width: 10px;
+            height: 220px;
+            background: #054c05;
+            top: 308px;
+            left: 185px;
+            border-radius: 0 0 100px 100px;
+        }
+
+        .hojas>div:nth-child(2) {
+            position: absolute;
+            width: 40px;
+            height: 55px;
+            top: 53px;
+            border-radius: 10px 80px 40px 80px;
+            background: #054c05;
+            transform-origin: bottom;
+            transform: rotate(-30deg);
+            top: 360px;
+            left: 155px;
+            box-shadow: inset 10px 10px #066406;
+        }
+
+        .hojas>div:nth-child(3) {
+            position: absolute;
+            width: 40px;
+            height: 55px;
+            top: 53px;
+            border-radius: 80px 1px 80px 40px;
+            background: #054c05;
+            transform-origin: bottom;
+            transform: rotate(30deg);
+            top: 310px;
+            left: 185px;
+            box-shadow: inset -10px 10px #066406;
+        }
+
+        .espinas>div {
+            position: absolute;
+            width: 0;
+            height: 0;
+            top: 300px;
+        }
+
+        .espinas>div:nth-child(odd) {
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-left: 10px solid #054c05;
+            left: 195px;
+        }
+
+        .espinas>div:nth-child(even) {
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-right: 10px solid #054c05;
+            left: 175px;
+        }
+
+        .espinas>div:nth-child(1) {
+            top: 390px;
+        }
+
+        .espinas>div:nth-child(2) {
+            top: 340px;
+        }
+
+        .espinas>div:nth-child(4) {
+            top: 415px;
+        }
+
+        @keyframes bloom2 {
+            50% {
+                transform: rotate(-90deg);
+                top: 400px;
+                left: 150px;
+            }
+
+            100% {
+                transform: rotate(-60deg);
+                top: 478px;
+                left: 100px;
+                background: #71122a;
+                box-shadow: 0px 0px 0px rgba(245, 148, 184, 0);
+            }
+        }
+
+        @keyframes bloom3 {
+            100% {
+                transform: rotate(50deg);
+            }
+        }
+
+        @keyframes bloom4 {
+            100% {
+                transform: rotate(-25deg);
+            }
+        }
+
+        @keyframes bloom5 {
+            100% {
+                transform: rotate(25deg);
+            }
+        }
+
+        @keyframes bloom6 {
+            100% {
+                transform: rotate(-10deg);
+            }
+        }
+
+        @keyframes bloom7 {
+            100% {
+                transform: rotate(10deg);
+            }
+        }
+
+        @keyframes glowing {
+            50% {
+                background: #d7365f;
+                box-shadow: 0px 0px 60px rgba(245, 148, 184, 1);
+            }
+        }
+
+        @keyframes falling {
+            20% {
+                top: 335px;
+                background: #9d193b;
+                box-shadow: 0px 0px 0px rgba(245, 148, 184, 0);
+            }
+
+            100% {
+                top: 335px;
+                opacity: 0;
+            }
+        }
+
+
+        
+    }
+    </style>
+
+
+    <script>
+        window.onload = function() {
+            Window.resizeTo(500,500);
+        };
+
+        
+    </script>
+
+</head>
+<body>
+
+    <audio id="audio" src="../Recursos/Pistas/Say Yes To Heaven.mp3"></audio>
+    <div class="principal">
+        <div class="caja">
+            <div class="vidrio">
+                <div class="brillo"></div>
+            </div>
+            <div class="espinas">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="hojas">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="petalos">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="deadPetals">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+
+            <h1 class="texto">Te Quiero Mucho Mi Vida</h1>
+            <p class="frase">Minetras el mundo no deje de existir y no nos volvamos polvo.
+                Mi corazón siempre, siempre buscara al tuyo.</p>
+
+        </div>
+    </div>
+    <script>
+        window.addEventListener("load", function() {
+            // Verificar si el botón fue presionado
+            if (localStorage.getItem("botonPresionado") === "true") {
+                // Reproducir el audio
+                var audio = document.getElementById("audio");
+                audio.play();
+                // Limpiar el estado en localStorage
+                localStorage.removeItem("botonPresionado");
+            }
+        });
+    </script>
+
+</body>
+</html>
+
